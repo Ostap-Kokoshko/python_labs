@@ -1,4 +1,22 @@
 class Stadium:
+    """
+    Represents a stadium.
+
+    Attributes:
+        PEOPLE_TO_EXPEL (int): One hundred of attendees to expel at once.
+        name (str): The name of the stadium.
+        capacity (int): The maximum capacity of the stadium.
+        current_attendance (int): The current number of attendees in the stadium.
+        home_team (str): The name of the home team.
+        away_team (str): The name of the away team.
+
+    Methods:
+        get_instance(): Returns the singleton instance of the Stadium class.
+        add_attendees(count: int): Adds the specified number of attendees to the stadium.
+        decrease_attendance(): Decreases the attendance by expelling a fixed number of attendees.
+        change_home_team(team_name: str): Changes the home team name.
+        change_away_team(team_name: str): Changes the away team name.
+    """
     PEOPLE_TO_EXPEL = 100
     instance = None
 
