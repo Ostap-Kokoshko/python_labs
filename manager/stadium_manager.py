@@ -1,3 +1,9 @@
+"""
+Representing a stadium manager.
+"""
+# pylint: disable = line-too-long
+
+
 class StadiumManager:
     """
     Class representing a stadium manager.
@@ -7,7 +13,11 @@ class StadiumManager:
     Attributes:
         stadiums (list): A list of stadiums managed by the manager.
     """
+
     def __init__(self):
+        """
+        Initializes a new instance of the StadiumManager class.
+        """
         self.stadiums = []
 
     def add_stadium(self, stadium):

@@ -1,4 +1,9 @@
+"""
+Import abstract stadium.
+"""
 from models.abstract_stadium import AbstractStadium
+# pylint: disable = line-too-long
+# pylint: disable = too-many-arguments
 
 
 class Stadium(AbstractStadium):
@@ -18,6 +23,14 @@ class Stadium(AbstractStadium):
     PEOPLE_TO_EXPEL = 100
 
     def __init__(self, name, capacity, current_attendance, home_team, away_team):
+        """
+        Params:
+            name (str): The name of the stadium.
+            capacity (int): The maximum capacity of the stadium.
+            current_attendance (int): The current number of attendees in the stadium.
+            home_team (str): The name of the home team.
+            away_team (str): The name of the away team.
+        """
         super().__init__(name, capacity, current_attendance)
         self.home_team = home_team
         self.away_team = away_team

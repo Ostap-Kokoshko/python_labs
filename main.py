@@ -1,3 +1,6 @@
+"""
+Importing models and manager
+"""
 from models.stadium import Stadium
 from models.swimming_pool import SwimmingPool
 from models.ski_resort import SkiResort
@@ -26,6 +29,7 @@ if __name__ == '__main__':
     print("\n")
 
     stadiums_with_more_attendance_now_than = stadium_manager.find_stadiums_with_more_attendance_now_than(4000)
+    # pylint: disable = line-too-long
     print("Stadiums with more attendance now than:")
     for stadium in stadiums_with_more_attendance_now_than:
         print(stadium)

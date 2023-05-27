@@ -1,4 +1,9 @@
+"""
+Import abstract stadium.
+"""
 from models.abstract_stadium import AbstractStadium
+# pylint: disable = line-too-long
+# pylint: disable = too-many-arguments
 
 
 class SkatingRink(AbstractStadium):
@@ -14,7 +19,16 @@ class SkatingRink(AbstractStadium):
         has_natural_ice (bool): Indicates whether the skating rink has natural ice or not.
         area_in_square_meters (float): The area of the skating rink in square meters.
     """
+
     def __init__(self, name, capacity, current_attendance, has_natural_ice, area_in_square_meters):
+        """
+        Params:
+            name (str): The name of the skating rink.
+            capacity (int): The maximum capacity of the skating rink.
+            current_attendance (int): The current number of attendees in the skating rink.
+            has_natural_ice (bool): Indicates whether the skating rink has natural ice or not.
+            area_in_square_meters (float): The area of the skating rink in square meters.
+        """
         super().__init__(name, capacity, current_attendance)
         self.has_natural_ice = has_natural_ice
         self.area_in_square_meters = area_in_square_meters
