@@ -46,3 +46,6 @@ class AbstractStadium(ABC):
 
     def __str__(self):
         return f"Name - {self.name}, Capacity = {self.capacity}, Current Attendance = {self.current_attendance}"
+
+    def __repr__(self):
+        return f"Name - {self.name}, Capacity = {self.capacity}, Current Attendance = {self.current_attendance}"

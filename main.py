@@ -2,7 +2,6 @@
 Importing models and manager
 """
 from models.stadium import Stadium
-from models.abstract_stadium import AbstractStadium
 from models.swimming_pool import SwimmingPool
 from models.ski_resort import SkiResort
 from models.skating_rink import SkatingRink
@@ -46,10 +45,11 @@ if __name__ == '__main__':
     print("Any stadiums satisfy the capacity condition: ", test_result["any"])
 
     test_manager = StadiumManager()
-    test_by_value = test_manager.get_attributes_by_type(str)
+    test_manager.add_stadium(Stadium("Arena Lviv", 30000, 13000, "Shahtar", "Carpatian"))
+    test_by_value = test_manager.get_attributes_by_type(int)
     print(f"List of attributes by value: ")
-    for index in test_by_value:
-        print(index)
+    for test_stadium in test_by_value:
+        print(test_stadium)
 
     set_manager = SetManager(stadium_manager)
 

@@ -45,7 +45,7 @@ class StadiumManager:
         Returns:
             list: A list of stadiums with the specified capacity.
         """
-        return str([stadium for stadium in self.stadiums if stadium.capacity == capacity])
+        return [stadium for stadium in self.stadiums if stadium.capacity == capacity]
 
     @register_calls_to_file
     def find_stadiums_with_more_attendance_now_than(self, current_attendance):

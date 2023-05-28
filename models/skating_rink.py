@@ -46,3 +46,7 @@ class SkatingRink(AbstractStadium):
     def __str__(self):
         return f"{super().__str__()}, Has natural ice - {self.has_natural_ice}, " \
                f"Area in square meters - {self.area_in_square_meters}"
+
+    def __repr__(self):
+        return f"{super().__str__()}, Has natural ice - {self.has_natural_ice}, " \
+               f"Area in square meters - {self.area_in_square_meters}"

@@ -46,3 +46,7 @@ class SkiResort(AbstractStadium):
     def __str__(self):
         return f"{super().__str__()}, Descent length - {self.descent_length}, Slope steepness in degrees - " \
                f"{self.slope_steepness_in_degrees}"
+
+    def __repr__(self):
+        return f"{super().__str__()}, Descent length - {self.descent_length}, Slope steepness in degrees - " \
+               f"{self.slope_steepness_in_degrees}"

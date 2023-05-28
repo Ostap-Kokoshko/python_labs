@@ -90,3 +90,7 @@ class Stadium(AbstractStadium):
     def __str__(self):
         return f"{super().__str__()}, " \
                f"{self.current_attendance}, Home team - {self.home_team}, Away team - {self.away_team}"
+
+    def __repr__(self):
+        return f"{super().__str__()}, " \
+               f"{self.current_attendance}, Home team - {self.home_team}, Away team - {self.away_team}"

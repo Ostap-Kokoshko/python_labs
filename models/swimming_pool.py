@@ -49,3 +49,7 @@ class SwimmingPool(AbstractStadium):
     def __str__(self):
         return f"{super().__str__()}, Number of bathrooms = {self.number_of_bathrooms}, Volume = {self.volume}, " \
                f"Max number of visitors = {self.max_number_of_visitors}"
+
+    def __repr__(self):
+        return f"{super().__str__()}, Number of bathrooms = {self.number_of_bathrooms}, Volume = {self.volume}, " \
+               f"Max number of visitors = {self.max_number_of_visitors}"
