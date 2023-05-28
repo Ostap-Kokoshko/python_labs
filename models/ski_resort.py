@@ -32,6 +32,7 @@ class SkiResort(AbstractStadium):
         super().__init__(name, capacity, current_attendance)
         self.descent_length = descent_length
         self.slope_steepness_in_degrees = slope_steepness_in_degrees
+        self.supported_sports_set = {"Ski racing", "Biathlon", "FreeStyle", "Ski dueling", "Ski jumping"}
 
     def get_supported_sports(self):
         """

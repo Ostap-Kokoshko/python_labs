@@ -28,6 +28,10 @@ class AbstractStadium(ABC):
         self.name = name
         self.capacity = capacity
         self.current_attendance = current_attendance
+        self.supported_sports_set = set()
+
+    def __iter__(self):
+        return iter(self.supported_sports_set)
 
     @abstractmethod
     def get_supported_sports(self):

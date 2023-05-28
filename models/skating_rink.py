@@ -32,6 +32,7 @@ class SkatingRink(AbstractStadium):
         super().__init__(name, capacity, current_attendance)
         self.has_natural_ice = has_natural_ice
         self.area_in_square_meters = area_in_square_meters
+        self.supported_sports_set = {"Hockey", "Figure skating"}
 
     def get_supported_sports(self):
         """

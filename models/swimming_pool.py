@@ -35,6 +35,7 @@ class SwimmingPool(AbstractStadium):
         self.number_of_bathrooms = number_of_bathrooms
         self.volume = volume
         self.max_number_of_visitors = max_number_of_visitors
+        self.supported_sports_set = {"Swimming", "Water Polo"}
 
     def get_supported_sports(self):
         """
