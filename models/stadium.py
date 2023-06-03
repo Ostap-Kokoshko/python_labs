@@ -34,6 +34,7 @@ class Stadium(AbstractStadium):
         super().__init__(name, capacity, current_attendance)
         self.home_team = home_team
         self.away_team = away_team
+        self.supported_sports_set = {"Football", "Basketball", "Tennis"}
 
     def add_attendees(self, count):
         """
@@ -87,5 +88,9 @@ class Stadium(AbstractStadium):
         return ["Football", "Basketball", "Tennis"]
 
     def __str__(self):
+        return f"{super().__str__()}, " \
+               f"{self.current_attendance}, Home team - {self.home_team}, Away team - {self.away_team}"
+
+    def __repr__(self):
         return f"{super().__str__()}, " \
                f"{self.current_attendance}, Home team - {self.home_team}, Away team - {self.away_team}"

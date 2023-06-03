@@ -35,6 +35,7 @@ class SwimmingPool(AbstractStadium):
         self.number_of_bathrooms = number_of_bathrooms
         self.volume = volume
         self.max_number_of_visitors = max_number_of_visitors
+        self.supported_sports_set = {"Swimming", "Water Polo"}
 
     def get_supported_sports(self):
         """
@@ -46,5 +47,9 @@ class SwimmingPool(AbstractStadium):
         return ["Swimming", "Water Polo"]
 
     def __str__(self):
+        return f"{super().__str__()}, Number of bathrooms = {self.number_of_bathrooms}, Volume = {self.volume}, " \
+               f"Max number of visitors = {self.max_number_of_visitors}"
+
+    def __repr__(self):
         return f"{super().__str__()}, Number of bathrooms = {self.number_of_bathrooms}, Volume = {self.volume}, " \
                f"Max number of visitors = {self.max_number_of_visitors}"

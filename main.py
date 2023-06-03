@@ -6,6 +6,7 @@ from models.swimming_pool import SwimmingPool
 from models.ski_resort import SkiResort
 from models.skating_rink import SkatingRink
 from manager.stadium_manager import StadiumManager
+from manager.set_manager import SetManager
 
 if __name__ == '__main__':
     stadium_manager = StadiumManager()
@@ -33,3 +34,26 @@ if __name__ == '__main__':
     print("Stadiums with more attendance now than:")
     for stadium in stadiums_with_more_attendance_now_than:
         print(stadium)
+
+    def capacity_condition(some_stadium):
+        return some_stadium.capacity > 10000
+
+    print(f"Test for condition capacity > 3000")
+    test_result = stadium_manager.check_conditions(capacity_condition)
+
+    print("All stadiums satisfy the capacity condition: ", test_result["all"])
+    print("Any stadiums satisfy the capacity condition: ", test_result["any"])
+
+    test_manager = StadiumManager()
+    test_manager.add_stadium(Stadium("Arena Lviv", 30000, 13000, "Shahtar", "Carpatian"))
+    test_by_value = test_manager.get_attributes_by_type(int)
+    print(f"List of attributes by value: ")
+    for test_stadium in test_by_value:
+        print(test_stadium)
+
+    set_manager = SetManager(stadium_manager)
+
+    print(f"Length of Set Manager: ", len(set_manager))
+    print(f"Items in sets: ")
+    for item in set_manager:
+        print(item)

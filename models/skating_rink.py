@@ -32,6 +32,7 @@ class SkatingRink(AbstractStadium):
         super().__init__(name, capacity, current_attendance)
         self.has_natural_ice = has_natural_ice
         self.area_in_square_meters = area_in_square_meters
+        self.supported_sports_set = {"Hockey", "Figure skating"}
 
     def get_supported_sports(self):
         """
@@ -43,5 +44,9 @@ class SkatingRink(AbstractStadium):
         return ["Hockey", "Figure skating"]
 
     def __str__(self):
+        return f"{super().__str__()}, Has natural ice - {self.has_natural_ice}, " \
+               f"Area in square meters - {self.area_in_square_meters}"
+
+    def __repr__(self):
         return f"{super().__str__()}, Has natural ice - {self.has_natural_ice}, " \
                f"Area in square meters - {self.area_in_square_meters}"
