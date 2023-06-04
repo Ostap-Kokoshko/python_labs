@@ -106,7 +106,7 @@ class StadiumManager:
         Returns:
             list: A list of tuples containing each stadium's object and its index.
         """
-        return [(index, stadium) for index, stadium in enumerate(self.stadiums)]
+        return list(enumerate(self.stadiums))
 
     def get_zipped_results_of_get_all_supported_sports_list(self):
         """
@@ -115,7 +115,7 @@ class StadiumManager:
         Returns:
             list: A list of tuples containing each stadium's object and the result of calling the do_something() method on it.
         """
-        return [(stadium, result) for stadium, result in zip(self.stadiums)]
+        return zip(self.stadiums)
 
     def check_conditions(self, condition_func):
         """

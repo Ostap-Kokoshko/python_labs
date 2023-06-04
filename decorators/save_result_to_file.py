@@ -16,4 +16,5 @@ def save_result_to_file(func):
             result = func(self, *args, **kwargs)
             file.write(str(result) + '\n')
         return result
+
     return wrapper
