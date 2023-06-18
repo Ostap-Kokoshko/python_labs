@@ -8,4 +8,5 @@ def register_calls_to_file(func):
             file.write(f"{method_name}: {call_count + 1}\n")
             call_count += 1
         return func(*args, **kwargs)
+
     return wrapper

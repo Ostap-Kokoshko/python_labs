@@ -29,16 +29,28 @@ if __name__ == '__main__':
         print(stadium)
     print("\n")
 
-    stadiums_with_more_attendance_now_than = stadium_manager.find_stadiums_with_more_attendance_now_than(4000)
     # pylint: disable = line-too-long
+    stadiums_with_more_attendance_now_than = stadium_manager.find_stadiums_with_more_attendance_now_than(4000)
+
     print("Stadiums with more attendance now than:")
     for stadium in stadiums_with_more_attendance_now_than:
         print(stadium)
 
+
     def capacity_condition(some_stadium):
+        """
+        Checks if a stadium has a capacity greater than 10000.
+
+        Args:
+            some_stadium (Stadium): The stadium object to check the capacity for.
+
+        Returns:
+            bool: True if the stadium's capacity is greater than 10000, False otherwise.
+        """
         return some_stadium.capacity > 10000
 
-    print(f"Test for condition capacity > 3000")
+
+    print("Test for condition capacity > 3000")
     test_result = stadium_manager.check_conditions(capacity_condition)
 
     print("All stadiums satisfy the capacity condition: ", test_result["all"])
@@ -47,13 +59,16 @@ if __name__ == '__main__':
     test_manager = StadiumManager()
     test_manager.add_stadium(Stadium("Arena Lviv", 30000, 13000, "Shahtar", "Carpatian"))
     test_by_value = test_manager.get_attributes_by_type(int)
-    print(f"List of attributes by value: ")
+    print("List of attributes by value: ")
     for test_stadium in test_by_value:
         print(test_stadium)
 
     set_manager = SetManager(stadium_manager)
 
-    print(f"Length of Set Manager: ", len(set_manager))
-    print(f"Items in sets: ")
+    print("Length of Set Manager: ", len(set_manager))
+    print("Items in sets: ")
     for item in set_manager:
         print(item)
+
+    new_stadium = Stadium("Arena Lviv", 30000, 13000, "Shahtar", "Carpatian")
+    new_stadium.add_attendees(-1)

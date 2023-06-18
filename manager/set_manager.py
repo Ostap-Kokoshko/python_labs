@@ -3,6 +3,9 @@ This is set manager file
 """
 
 
+# pylint: disable = line-too-long
+
+
 class SetManager:
     """
     Set Manager class for working with the sets of objects in a regular manager.

@@ -2,6 +2,11 @@
 Import abstract stadium.
 """
 from models.abstract_stadium import AbstractStadium
+from exceptions.exceptions import NegativeValueException
+from exceptions.exceptions import TooManyArguments
+from decorators.logged import logged
+
+
 # pylint: disable = line-too-long
 # pylint: disable = too-many-arguments
 
@@ -36,6 +41,8 @@ class Stadium(AbstractStadium):
         self.away_team = away_team
         self.supported_sports_set = {"Football", "Basketball", "Tennis"}
 
+    @logged(NegativeValueException, "console")
+    @logged(TooManyArguments, "console")
     def add_attendees(self, count):
         """
         Adds the specified number of attendees to the stadium.
@@ -43,11 +50,17 @@ class Stadium(AbstractStadium):
 
         Args:
             count (int): The number of attendees to add.
+
+        Raises:
+            NegativeValueException: If the 'count' parameter is a negative value.
+            TooManyArguments: If the new attendance exceeds the stadium capacity.
         """
+        if count < 0:
+            raise NegativeValueException("count")
         new_attendance = self.current_attendance + count
         if new_attendance > self.capacity:
             print("The stadium is full!")
-            return
+            raise TooManyArguments("attendance")
         self.current_attendance = new_attendance
 
     def decrease_attendance(self):

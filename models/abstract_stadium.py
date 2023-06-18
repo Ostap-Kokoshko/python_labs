@@ -2,6 +2,8 @@
 Abstract base class representing a stadium.
 """
 from abc import ABC, abstractmethod
+
+
 # pylint: disable = line-too-long
 # pylint: disable = too-many-arguments
 
